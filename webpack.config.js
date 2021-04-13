@@ -1,5 +1,4 @@
 const path = require('path')
-const webpack = require('webpack')
 
 const mode = process.env.NODE_ENV || 'production'
 
@@ -9,6 +8,9 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
   },
   mode,
+  node: {
+    fs: 'empty',
+  },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
     plugins: [],
@@ -21,6 +23,11 @@ module.exports = {
         options: {
           transpileOnly: true,
         },
+      },
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: 'javascript/auto',
       },
     ],
   },

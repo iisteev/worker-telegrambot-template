@@ -1,6 +1,6 @@
-# ʕ •́؈•̀) `workers-typescript-template`
+# ʕ •́؈•̀) `worker-telegrambot-template`
 
-A batteries included template for kick starting a TypeScript Cloudflare worker project.
+A batteries included template for kick starting a Telegram Bot using [telegraf.js](https://telegraf.js.org/) with Cloudflare worker project.
 
 ## 🔋 Getting Started
 
@@ -9,8 +9,18 @@ This template is meant to be used with [Wrangler](https://github.com/cloudflare/
 To generate using Wrangler, run this command:
 
 ```bash
-wrangler generate my-ts-project https://github.com/EverlastingBugstopper/worker-typescript-template
+wrangler generate my-ts-project https://github.com/iisteev/worker-telegrambot-template
 ```
+
+You should also put your telegram bot token in a secret. The already defined variable can be found in [bindings.d.ts](./src/bindings.d.ts)
+
+To create a secret, run this command and then paste your token:
+
+```bash
+wrangler secret put TG_BOT_API_TOKEN
+```
+
+> PS: Sometimes creating a secret with wrangler before creating a worker fails, you should create your worker and then create the secret.
 
 ### 👩 💻 Developing
 
@@ -18,7 +28,7 @@ wrangler generate my-ts-project https://github.com/EverlastingBugstopper/worker-
 
 ### 🧪 Testing
 
-This template comes with mocha tests which simply test that the request handler can handle each request method. `npm test` will run your tests.
+This template comes with mocha tests. `npm test` will run your tests.
 
 ### ✏️ Formatting
 
@@ -30,7 +40,7 @@ For information on how to preview and publish your worker, please see the [Wrang
 
 ## 🤢 Issues
 
-If you run into issues with this specific project, please feel free to file an issue [here](https://github.com/cloudflare/workers-typescript-template/issues). If the problem is with Wrangler, please file an issue [here](https://github.com/cloudflare/wrangler/issues).
+If you run into issues with this specific project, please feel free to file an issue [here](https://github.com/iisteev/worker-telegrambot-template/issues). If the problem is with Wrangler, please file an issue [here](https://github.com/cloudflare/wrangler/issues).
 
 ## ⚠️ Caveats
 
